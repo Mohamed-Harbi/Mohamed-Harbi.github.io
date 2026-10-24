@@ -1,281 +1,518 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mohamed Harbi | Software Engineering Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#F2F6F5; --surface:#FFFFFF; --ink:#13262B; --muted:#51666B;
-  --accent:#1B6E78; --accent-ink:#FFFFFF; --warm:#E9A93B; --line:#D3DFDD;
-  --code-bg:#13262B; --code-ink:#DDEBE8;
-}
-@media (prefers-color-scheme: dark){
-  :root{--bg:#0F1D21; --surface:#17292E; --ink:#E6F0EE; --muted:#9DB3B7;
-  --accent:#5CC3CF; --accent-ink:#0F1D21; --line:#264046; --code-bg:#0A1417;}
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Nunito Sans",system-ui,sans-serif;line-height:1.65;font-size:17px}
-h1,h2,h3{font-family:Sora,system-ui,sans-serif;line-height:1.15;margin:0}
-a{color:var(--accent)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--warm);outline-offset:3px}
-.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
-nav{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
-nav .wrap{display:flex;gap:22px;overflow-x:auto;padding-top:14px;padding-bottom:14px;white-space:nowrap}
-nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:15px}
-nav a:hover{color:var(--accent)}
-.hero{padding:72px 0 56px}
-.hero .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
-.hero h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:800;letter-spacing:-.02em}
-.hero p.lead{font-size:1.15rem;color:var(--muted);max-width:30em;margin:20px 0 28px}
-.btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-block;padding:12px 22px;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid var(--accent)}
-.btn.main{background:var(--accent);color:var(--accent-ink)}
-.btn.alt{color:var(--accent)}
-.code{background:var(--code-bg);color:var(--code-ink);border-radius:12px;padding:22px;font-family:ui-monospace,Consolas,monospace;font-size:14.5px;line-height:1.8;overflow-x:auto;border-top:6px solid var(--warm)}
-.code .k{color:#E9A93B}.code .s{color:#8FD9B6}.code .c{color:#7F989C}
-section{padding:56px 0;border-top:1px solid var(--line)}
-section h2{font-size:1.9rem;margin-bottom:22px}
-p{margin:0 0 14px;max-width:46em}
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.box{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px}
-.box h3{font-size:1.05rem;margin-bottom:8px}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.tag{background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:3px 12px;font-size:14px}
-.project{border-left:6px solid var(--accent);padding-left:22px}
-.project dl{display:grid;grid-template-columns:150px 1fr;gap:6px 16px;margin:16px 0}
-.project dt{font-weight:700}.project dd{margin:0}
-.scroll{overflow-x:auto}
-table{border-collapse:collapse;width:100%;min-width:420px;background:var(--surface)}
-th,td{border:1px solid var(--line);padding:12px 16px;text-align:left;vertical-align:top}
-th{background:var(--accent);color:var(--accent-ink);font-family:Sora,sans-serif;font-size:15px}
-ul.contact{list-style:none;padding:0;margin:0}
-ul.contact li{padding:8px 0;border-bottom:1px solid var(--line)}
-ul.contact b{display:inline-block;width:100px}
-footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
-@media(max-width:760px){
-  .hero .wrap{grid-template-columns:1fr}
-  .project dl{grid-template-columns:1fr}
-}
-.project+.project{margin-top:48px}
-.preview{width:100%;height:340px;border:1px solid var(--line);border-radius:10px;background:#fff;margin-top:8px}
-details{margin-top:14px}
-summary{cursor:pointer;font-weight:700;color:var(--accent)}
-pre.src{background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow:auto;max-height:420px;font-size:13px;line-height:1.6;margin:10px 0 0}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mohamed Harbi | Software Engineering Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Nunito+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F2F6F5;
+      --surface: #FFFFFF;
+      --ink: #13262B;
+      --muted: #51666B;
+      --accent: #1B6E78;
+      --accent-ink: #FFFFFF;
+      --warm: #E9A93B;
+      --line: #D3DFDD;
+      --code-bg: #13262B;
+      --code-ink: #DDEBE8;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0F1D21;
+        --surface: #17292E;
+        --ink: #E6F0EE;
+        --muted: #9DB3B7;
+        --accent: #5CC3CF;
+        --accent-ink: #0F1D21;
+        --line: #264046;
+        --code-bg: #0A1417;
+      }
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Nunito Sans", system-ui, sans-serif;
+      line-height: 1.65;
+      font-size: 17px
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: Sora, system-ui, sans-serif;
+      line-height: 1.15;
+      margin: 0
+    }
+
+    a {
+      color: var(--accent)
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--warm);
+      outline-offset: 3px
+    }
+
+    .wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+      z-index: 5
+    }
+
+    nav .wrap {
+      display: flex;
+      gap: 22px;
+      overflow-x: auto;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      white-space: nowrap
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px
+    }
+
+    nav a:hover {
+      color: var(--accent)
+    }
+
+    .hero {
+      padding: 72px 0 56px
+    }
+
+    .hero .wrap {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 7vw, 4.6rem);
+      font-weight: 800;
+      letter-spacing: -.02em
+    }
+
+    .hero p.lead {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 30em;
+      margin: 20px 0 28px
+    }
+
+    .btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 2px solid var(--accent)
+    }
+
+    .btn.main {
+      background: var(--accent);
+      color: var(--accent-ink)
+    }
+
+    .btn.alt {
+      color: var(--accent)
+    }
+
+    .code {
+      background: var(--code-bg);
+      color: var(--code-ink);
+      border-radius: 12px;
+      padding: 22px;
+      font-family: ui-monospace, Consolas, monospace;
+      font-size: 14.5px;
+      line-height: 1.8;
+      overflow-x: auto;
+      border-top: 6px solid var(--warm)
+    }
+
+    .code .k {
+      color: #E9A93B
+    }
+
+    .code .s {
+      color: #8FD9B6
+    }
+
+    .code .c {
+      color: #7F989C
+    }
+
+    section {
+      padding: 56px 0;
+      border-top: 1px solid var(--line)
+    }
+
+    section h2 {
+      font-size: 1.9rem;
+      margin-bottom: 22px
+    }
+
+    p {
+      margin: 0 0 14px;
+      max-width: 46em
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px
+    }
+
+    .box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 20px
+    }
+
+    .box h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px
+    }
+
+    .tag {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px 12px;
+      font-size: 14px
+    }
+
+    .project {
+      border-left: 6px solid var(--accent);
+      padding-left: 22px
+    }
+
+    .project dl {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 6px 16px;
+      margin: 16px 0
+    }
+
+    .project dt {
+      font-weight: 700
+    }
+
+    .project dd {
+      margin: 0
+    }
+
+    .scroll {
+      overflow-x: auto
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 420px;
+      background: var(--surface)
+    }
+
+    th,
+    td {
+      border: 1px solid var(--line);
+      padding: 12px 16px;
+      text-align: left;
+      vertical-align: top
+    }
+
+    th {
+      background: var(--accent);
+      color: var(--accent-ink);
+      font-family: Sora, sans-serif;
+      font-size: 15px
+    }
+
+    ul.contact {
+      list-style: none;
+      padding: 0;
+      margin: 0
+    }
+
+    ul.contact li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--line)
+    }
+
+    ul.contact b {
+      display: inline-block;
+      width: 100px
+    }
+
+    footer {
+      padding: 32px 0;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid var(--line)
+    }
+
+    @media(max-width:760px) {
+      .hero .wrap {
+        grid-template-columns: 1fr
+      }
+
+      .project dl {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .project+.project {
+      margin-top: 48px
+    }
+
+    .preview {
+      width: 100%;
+      height: 340px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      margin-top: 8px
+    }
+
+    details {
+      margin-top: 14px
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--accent)
+    }
+
+    pre.src {
+      background: var(--code-bg);
+      color: var(--code-ink);
+      border-radius: 10px;
+      padding: 16px;
+      overflow: auto;
+      max-height: 420px;
+      font-size: 13px;
+      line-height: 1.6;
+      margin: 10px 0 0
+    }
+  </style>
 </head>
+
 <body>
 
-<nav aria-label="Main">
-  <div class="wrap">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-    <a href="#get-post">GET vs POST</a>
-  </div>
-</nav>
+  <nav aria-label="Main">
+    <div class="wrap">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+      <a href="#get-post">GET vs POST</a>
+    </div>
+  </nav>
 
-<header class="hero">
-  <div class="wrap">
-    <div>
-      <h1>Mohamed Harbi</h1>
-      <p class="lead">Software Engineering student building reliable programs and learning something new every week.</p>
-      <div class="btns">
-        <a class="btn main" href="#projects">See my projects</a>
-        <a class="btn alt" href="#contact">Contact me</a>
+  <header class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Mohamed Harbi</h1>
+        <p class="lead">Software Engineering student building reliable programs and learning something new every week.
+        </p>
+        <div class="btns">
+          <a class="btn main" href="#projects">See my projects</a>
+          <a class="btn alt" href="#contact">Contact me</a>
+        </div>
+      </div>
+      <div class="code" aria-label="Profile summary written as code">
+        <span class="k">const</span> mohamed = {<br>
+        &nbsp;&nbsp;role: <span class="s">"Software Engineering student"</span>,<br>
+        &nbsp;&nbsp;university: <span class="s">"Suez Canal"</span>,<br>
+        &nbsp;&nbsp;languages: [<span class="s">"Python"</span>, <span class="s">"C++"</span>, <span
+          class="s">"C#"</span>],<br>
+        &nbsp;&nbsp;location: <span class="s">"Ismailia, Egypt"</span>,<br>
+        &nbsp;&nbsp;learning: <span class="s">"HTML, CSS, GitHub"</span><br>
+        };
       </div>
     </div>
-    <div class="code" aria-label="Profile summary written as code">
-<span class="k">const</span> mohamed = {<br>
-&nbsp;&nbsp;role: <span class="s">"Software Engineering student"</span>,<br>
-&nbsp;&nbsp;university: <span class="s">"Suez Canal"</span>,<br>
-&nbsp;&nbsp;languages: [<span class="s">"Python"</span>, <span class="s">"C++"</span>, <span class="s">"C#"</span>],<br>
-&nbsp;&nbsp;location: <span class="s">"Ismailia, Egypt"</span>,<br>
-&nbsp;&nbsp;learning: <span class="s">"HTML, CSS, GitHub"</span><br>
-};
-    </div>
-  </div>
-</header>
+  </header>
 
-<main>
-<section id="about">
-  <div class="wrap">
-    <h2>About me</h2>
-    <p>I am a Software Engineering student at the Faculty of Computers and Information. I enjoy programming, solving problems, and building software applications.</p>
-    <p>Through academic projects and personal practice, I am gaining practical experience and building reliable, efficient solutions. I want to learn new technologies, work with others, and grow as a software engineer.</p>
-    <p><b>Interest:</b> Software Development</p>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="wrap">
-    <h2>Technical skills</h2>
-    <div class="skills">
-      <div class="box">
-        <h3>Programming</h3>
-        <p>Python (intermediate), C++ and C# (beginner)</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">C++</span><span class="tag">C#</span></div>
+  <main>
+    <section id="about">
+      <div class="wrap">
+        <h2>About me</h2>
+        <p>I am a Software Engineering student at the Faculty of Computers and Information. I enjoy programming, solving
+          problems, and building software applications.</p>
+        <p>Through academic projects and personal practice, I am gaining practical experience and building reliable,
+          efficient solutions. I want to learn new technologies, work with others, and grow as a software engineer.</p>
+        <p><b>Interest:</b> Software Development</p>
       </div>
-      <div class="box">
-        <h3>Development tools</h3>
-        <p>Editors and IDEs I use for coding.</p>
-        <div class="tags"><span class="tag">VS Code</span><span class="tag">PyCharm</span><span class="tag">Visual Studio</span></div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <h2>Technical skills</h2>
+        <div class="skills">
+          <div class="box">
+            <h3>Programming</h3>
+            <p>Python (intermediate), C++ and C# (beginner)</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">C++</span><span class="tag">C#</span>
+            </div>
+          </div>
+          <div class="box">
+            <h3>Development tools</h3>
+            <p>Editors and IDEs I use for coding.</p>
+            <div class="tags"><span class="tag">VS Code</span><span class="tag">PyCharm</span><span class="tag">Visual
+                Studio</span></div>
+          </div>
+          <div class="box">
+            <h3>Other</h3>
+            <p>Tools for math and office work.</p>
+            <div class="tags"><span class="tag">MATLAB</span><span class="tag">Office</span></div>
+          </div>
+        </div>
       </div>
-      <div class="box">
-        <h3>Other</h3>
-        <p>Tools for math and office work.</p>
-        <div class="tags"><span class="tag">MATLAB</span><span class="tag">Office</span></div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <h2>Projects</h2>
+        <article class="project">
+          <h3>Generate Password</h3>
+          <dl>
+            <dt>Purpose</dt>
+            <dd>A program that creates very strong, random passwords to help people keep their accounts secure.</dd>
+            <dt>Technologies</dt>
+            <dd>Python, JSON file</dd>
+            <dt>What I built</dt>
+            <dd>The full password generator, including saving data in a JSON file.</dd>
+            <dt>What I learned</dt>
+            <dd>How to work with JSON files, and better Python skills.</dd>
+            <dt>Code</dt>
+            <dd><a href="https://github.com/Mohamed-Harbi/Generate-Password">View on GitHub</a></dd>
+          </dl>
+        </article>
+        <article class="project">
+          <h3>First HTML Website</h3>
+          <dl>
+            <dt>Purpose</dt>
+            <dd>My first web page, built to practice the basic HTML tags.</dd>
+            <dt>Technologies</dt>
+            <dd>HTML</dd>
+            <dt>What I built</dt>
+            <dd>A full page with colored headings, bold and underlined text, a paragraph, a horizontal line, nested
+              lists, and a link.</dd>
+            <dt>What I learned</dt>
+            <dd>How to structure a page with HTML tags and nest lists inside each other.</dd>
+            <dt>Links</dt>
+            <dd><a href="https://mohamed-harbi.github.io/First-web/">Open the page</a></dd>
+          </dl>
+        </article>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section id="projects">
-  <div class="wrap">
-    <h2>Projects</h2>
-    <article class="project">
-      <h3>Generate Password</h3>
-      <dl>
-        <dt>Purpose</dt><dd>A program that creates very strong, random passwords to help people keep their accounts secure.</dd>
-        <dt>Technologies</dt><dd>Python, JSON file</dd>
-        <dt>What I built</dt><dd>The full password generator, including saving data in a JSON file.</dd>
-        <dt>What I learned</dt><dd>How to work with JSON files, and better Python skills.</dd>
-        <dt>Code</dt><dd><a href="https://github.com/Mohamed-Harbi/Generate-Password">View on GitHub</a></dd>
-      </dl>
-    </article>
-    <article class="project">
-      <h3>First HTML Website</h3>
-      <dl>
-        <dt>Purpose</dt><dd>My first web page, built to practice the basic HTML tags.</dd>
-        <dt>Technologies</dt><dd>HTML</dd>
-        <dt>What I built</dt><dd>A full page with colored headings, bold and underlined text, a paragraph, a horizontal line, nested lists, and a link.</dd>
-        <dt>What I learned</dt><dd>How to structure a page with HTML tags and nest lists inside each other.</dd>
-        <dt>Links</dt><dd><a href="First-web.html">Open the page</a> | <a href="https://github.com/Mohamed-Harbi/Mohamed-Harbi.github.io/blob/main/First-web.html">View on GitHub</a></dd>
-      </dl>
-      <details>
-        <summary>Show the code</summary>
-        <pre class="src"><code>&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;
-                 First Task 
-        &lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;h1 align=&quot;center&quot; &gt;
-            &lt;font color=&quot;red&quot;&gt;
-               This my First website
-            &lt;/font&gt;
-        &lt;/h1&gt;
-        &lt;h2 align=&quot;center&quot;&gt;
-            &lt;b size=&quot;5&quot;&gt;
-               this text is bold with size 5 The standard Lorem Ipsum passage
-            &lt;/b&gt;
-        &lt;/h2&gt;
-        &lt;p align=&quot;center&quot;&gt;
-            &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;
-        &lt;/p&gt;
-        &lt;hr&gt;
-        &lt;h3&gt;
-            &lt;u size=&quot;7&quot;&gt;
-                Task
-            &lt;/u&gt; 
-            &lt;ul type=&quot;square&quot;&gt;
-                &lt;li&gt;
-                    &lt;b&gt;
-                        first task
-                    &lt;/b&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;font color=&quot;red&quot;&gt;
-                        second task
-                    &lt;/font&gt;
-                &lt;/li&gt;
-                &lt;ul&gt;
-                    &lt;ol type=&quot;i&quot;&gt;
-                        &lt;li&gt;
-                            &lt;font color=&quot;blue&quot;&gt;
-                                nested item
-                            &lt;/font&gt;
-                        &lt;/li&gt;
-                        &lt;ul type=&quot;square&quot;&gt;
-                            &lt;li &gt;
-                                &lt;font color=&quot;green&quot;&gt;
-                                    nested item
-                                &lt;/font&gt;
-                            &lt;/li&gt;
-                            &lt;li&gt; 
-                                &lt;font color=&quot;green&quot;&gt;
-                                    nested item
-                                &lt;/font&gt;
-                            &lt;/li&gt;
-                        &lt;/ul&gt;
-                        &lt;li&gt;
-                           &lt;font color=&quot;blue&quot;&gt;
-                                nested item
-                            &lt;/font&gt;
-                        &lt;/li&gt;
-                &lt;/ul&gt;
-                &lt;li&gt;
-                    &lt;u&gt;
-                      third task==&gt;&gt; &lt;a href=&quot;https://www.google.com&quot;&gt; click here&lt;/a&gt;
-                    &lt;/u&gt;
-                &lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/h3&gt;
-         
-    &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-      </details>
-    </article>
-  </div>
-</section>
+    <section id="education">
+      <div class="wrap">
+        <h2>Education</h2>
+        <p><b>Degree:</b> Bachelor's degree in Software Engineering (in progress)</p>
+        <p><b>University:</b> Suez Canal University</p>
+      </div>
+    </section>
 
-<section id="education">
-  <div class="wrap">
-    <h2>Education</h2>
-    <p><b>Degree:</b> Bachelor's degree in Software Engineering (in progress)</p>
-    <p><b>University:</b> Suez Canal University</p>
-  </div>
-</section>
+    <section id="contact">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <ul class="contact">
+          <li><b>Email</b> <a href="mailto:harbim049@gmail.com">harbim049@gmail.com</a></li>
+          <li><b>LinkedIn</b> <a href="https://www.linkedin.com/in/mohamed-harbi332060389">mohamed-harbi332060389</a>
+          </li>
+          <li><b>GitHub</b> <a href="https://github.com/Mohamed-Harbi">github.com/Mohamed-Harbi</a></li>
+          <li><b>Location</b> Ismailia, Egypt</li>
+        </ul>
+      </div>
+    </section>
 
-<section id="contact">
-  <div class="wrap">
-    <h2>Contact</h2>
-    <ul class="contact">
-      <li><b>Email</b> <a href="mailto:harbim049@gmail.com">harbim049@gmail.com</a></li>
-      <li><b>LinkedIn</b> <a href="https://www.linkedin.com/in/mohamed-harbi332060389">mohamed-harbi332060389</a></li>
-      <li><b>GitHub</b> <a href="https://github.com/Mohamed-Harbi">github.com/Mohamed-Harbi</a></li>
-      <li><b>Location</b> Ismailia, Egypt</li>
-    </ul>
-  </div>
-</section>
+    <section id="get-post">
+      <div class="wrap">
+        <h2>GET vs POST</h2>
+        <div class="scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Point</th>
+                <th>GET</th>
+                <th>POST</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Where the data goes</td>
+                <td>Inside the URL</td>
+                <td>Hidden from the URL</td>
+              </tr>
+              <tr>
+                <td>Amount of data</td>
+                <td>Limited</td>
+                <td>Unlimited</td>
+              </tr>
+              <tr>
+                <td>Security</td>
+                <td>Not encrypted</td>
+                <td>Encrypted</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<section id="get-post">
-  <div class="wrap">
-    <h2>GET vs POST</h2>
-    <div class="scroll">
-      <table>
-        <thead><tr><th>Point</th><th>GET</th><th>POST</th></tr></thead>
-        <tbody>
-          <tr><td>Where the data goes</td><td>Inside the URL</td><td>Hidden from the URL</td></tr>
-          <tr><td>Amount of data</td><td>Limited</td><td>Unlimited</td></tr>
-          <tr><td>Security</td><td>Not encrypted</td><td>Encrypted</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer>
-  <div class="wrap">Mohamed Harbi, Software Engineering Portfolio</div>
-</footer>
+  <footer>
+    <div class="wrap">Mohamed Harbi, Software Engineering Portfolio</div>
+  </footer>
 
 </body>
+
 </html>
